@@ -52,10 +52,12 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     public_id = models.UUIDField(db_index=True, unique=True, default=uuid.uuid4, editable=False)
+    avatar = models.ImageField(null=True)
     username = models.CharField(db_index=True, max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField(db_index=True, unique=True)
+    bio = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True)
     is_superuser = models.BooleanField(default=False)
     updated = models.DateTimeField(auto_now_add=True)
