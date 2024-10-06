@@ -94,12 +94,4 @@ class User(AbstractModel, AbstractBaseUser, PermissionsMixin):
     
     def has_liked(self, post):
         # Return True if the user has liked a post Else False
-        return self.posts_liked.filter(pk=post.pk).exists()
-        
-        
-    
-
-
-        
-        
-        
+        return self.posts_liked.filter(pk=post.pk).exists()    
