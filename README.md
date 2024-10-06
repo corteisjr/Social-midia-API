@@ -2,7 +2,7 @@
 
 ### Rede social, criada para aperfeiçoar os meus conhecimentos em backend e fronted
 
-##Tecnologias(Backend)
+## Tecnologias(Backend)
 - Pytho3.11
 - PostgreSql
 - Django
