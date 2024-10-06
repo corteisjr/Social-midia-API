@@ -2,7 +2,7 @@ from django.db import models
 from core.abstract.models import AbstractManager, AbstractModel
 
 class PostManager(AbstractManager):
-    ...
+    pass
     
     
 class Post(AbstractModel):

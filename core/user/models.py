@@ -50,7 +50,7 @@ class UserManager(BaseUserManager, AbstractManager):
         return user    
         
 
-class User(AbstractBaseUser, AbstractModel, PermissionsMixin):
+class User(AbstractModel, AbstractBaseUser, PermissionsMixin):
     avatar = models.ImageField(null=True)
     username = models.CharField(db_index=True, max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
