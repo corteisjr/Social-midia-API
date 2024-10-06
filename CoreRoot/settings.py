@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'CoreRoot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'coredb',
+        'NAME': 'postgrandb',
         'USER': 'core_user',
         'PASSWORD': 'mulherengo01',
         'HOST': 'localhost',
