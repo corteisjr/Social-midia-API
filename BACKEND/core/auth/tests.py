@@ -31,11 +31,25 @@ class TestAuthenticationViewSet:
         response = client.post(self.endpoint + 'register/', data,  format='json')
         print(response.data)
         assert response.status_code == status.HTTP_201_CREATED
-        data_refresh = {
-            "refresh": response.data['refresh']
-        }
         
-        response = client.post(self.endpoint + 'refresh/', data_refresh,  format='json')
+    
+    def test_refresh(self, client, user):
+        data = {
+        'email': user.email,
+        "username": user.username,
+        "password": "test_password"
+        }
+        response = client.post(self.endpoint + "login/",
+        data)
+        
+        print(response.data)
+        
+        assert response.status_code == status.HTTP_200_OK
+        data_refresh = {
+        "refresh": response.data['refresh']
+        }
+        response = client.post(self.endpoint + "refresh/",
+        data_refresh)
         assert response.status_code == status.HTTP_200_OK
         assert response.data['access']
     
