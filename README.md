@@ -2,7 +2,7 @@
 
 ### API 
 
-## Tecnologias(Backend)
+## Tecnologias
 - Pytho3.11
 - PostgreSql
 - Django
